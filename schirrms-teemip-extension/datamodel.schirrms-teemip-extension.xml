@@ -3,6 +3,14 @@
 	<constants>
 	</constants>
 	<classes>
+		<class id="LogicalInterface" _delta="must_exist">
+			<fields>
+				<field id="virtualmachine_status" xsi:type="AttributeExternalField" _delta="define">
+					<extkey_attcode>virtualmachine_id</extkey_attcode>
+					<target_attcode>status</target_attcode>
+				</field>
+			</fields>
+		</class>
 		<class id="ManagementModule" _delta="must_exist">
 			<presentation>
 				<details>
@@ -61,6 +69,30 @@
 						</item>
 					</items>
 				</search>
+			</presentation>
+		</class>
+		<class id="Enclosure" _delta="must_exist">
+			<presentation>
+				<details>
+					<items>
+						<item id="col:col0">
+							<items>
+								<item id="fieldset:Enclosure:moreinfo">
+									<items>
+										<item id="macaddress" _delta="define">
+											<rank>42</rank>
+										</item>
+										<item id="ipaddress_id" _delta="define">
+											<rank>44</rank>
+										</item>
+									</items>
+								</item>
+							</items>
+						</item>
+						<item id="macaddress" _delta="delete"/>
+						<item id="ipaddress_id" _delta="delete"/>
+					</items>
+				</details>
 			</presentation>
 		</class>
 	</classes>
