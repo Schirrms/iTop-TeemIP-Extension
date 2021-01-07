@@ -3,14 +3,6 @@
 	<constants>
 	</constants>
 	<classes>
-		<class id="LogicalInterface" _delta="must_exist">
-			<fields>
-				<field id="virtualmachine_status" xsi:type="AttributeExternalField" _delta="define">
-					<extkey_attcode>virtualmachine_id</extkey_attcode>
-					<target_attcode>status</target_attcode>
-				</field>
-			</fields>
-		</class>
 		<class id="ManagementModule" _delta="must_exist">
 			<presentation>
 				<details>
