@@ -206,13 +206,10 @@
 			<presentation>
 				<details>
 					<item id="vlans_list" _delta="define">
-						<rank>10</rank>
-					</item>
-					<item id="vrfs_list" _delta="define">
-						<rank>20</rank>
+						<rank>130</rank>
 					</item>
 					<item id="ip_list" _delta="define">
-						<rank>30</rank>
+						<rank>140</rank>
 					</item>
 				</details>
 			</presentation>
@@ -221,13 +218,10 @@
 			<presentation>
 				<details>
 					<item id="vlans_list" _delta="define">
-						<rank>10</rank>
-					</item>
-					<item id="vrfs_list" _delta="define">
-						<rank>20</rank>
+						<rank>130</rank>
 					</item>
 					<item id="ip_list" _delta="define">
-						<rank>30</rank>
+						<rank>140</rank>
 					</item>
 				</details>
 			</presentation>
