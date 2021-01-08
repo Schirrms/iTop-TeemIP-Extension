@@ -49,17 +49,17 @@
 					<on_target_delete>DEL_AUTO</on_target_delete>
 					<jointype/>
 				</field>
-				<field id="usage_id" xsi:type="AttributeExternalField" _delta="define">
+				<field id="usage_id" xsi:type="AttributeExternalField">
 					<extkey_attcode>ipaddress_id</extkey_attcode>
 					<target_attcode>usage_id</target_attcode>
 				</field>
-				<field id="ipaddress_org_name" xsi:type="AttributeExternalField" _delta="define">
+				<field id="ipaddress_org_name" xsi:type="AttributeExternalField">
 					<extkey_attcode>ipaddress_id</extkey_attcode>
 					<target_attcode>org_name</target_attcode>
 				</field>
 			</fields>
 			<methods>
-				<method id="AfterInsert" _delta="define">
+				<method id="AfterInsert">
 				<comment/>
 				<static>false</static>
 				<access>public</access>
@@ -80,7 +80,7 @@
 		}
 	}]]></code>
 				</method>
-				<method id="AfterDelete" _delta="define">
+				<method id="AfterDelete">
 					<comment/>
 					<static>false</static>
 					<access>public</access>
@@ -205,18 +205,22 @@
 		<class id="GenericCommPhysInterface" _delta="must_exist">
 			<presentation>
 				<details>
-					<item id="ip_list" _delta="define">
-						<rank>140</rank>
-					</item>
+					<items>
+						<item id="ip_list" _delta="define">
+							<rank>140</rank>
+						</item>
+					</items>
 				</details>
 			</presentation>
 		</class>
 		<class id="GenericCommVirtInterface" _delta="must_exist">
 			<presentation>
 				<details>
-					<item id="ip_list" _delta="define">
-						<rank>140</rank>
-					</item>
+					<items>
+						<item id="ip_list" _delta="define">
+							<rank>140</rank>
+						</item>
+					</items>
 				</details>
 			</presentation>
 		</class>
