@@ -152,6 +152,36 @@
 				</list>
 			</presentation>
 		</class>
+		<class id="GenericCommPhysInterface" _delta="must_exist">
+			<presentation>
+				<details>
+					<item id="vlans_list">
+						<rank>10</rank>
+					</item>
+					<item id="vrfs_list">
+						<rank>20</rank>
+					</item>
+					<item id="ip_list">
+						<rank>30</rank>
+					</item>
+				</details>
+			</presentation>
+		</class>
+		<class id="GenericCommVirtInterface" _delta="must_exist">
+			<presentation>
+				<details>
+					<item id="vlans_list">
+						<rank>10</rank>
+					</item>
+					<item id="vrfs_list">
+						<rank>20</rank>
+					</item>
+					<item id="ip_list">
+						<rank>30</rank>
+					</item>
+				</details>
+			</presentation>
+		</class>
 		<class id="ManagementModule" _delta="must_exist">
 			<presentation>
 				<details>
