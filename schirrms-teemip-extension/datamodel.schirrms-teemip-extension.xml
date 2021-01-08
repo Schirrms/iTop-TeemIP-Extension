@@ -1,8 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.7">
 	<constants>
 	</constants>
 	<classes>
+		<!-- technically a clone of lnkIPInterfaceToIPAddress -->
+		<class id="lnkIPInterfaceToIPAddress" _delta="define">
+			<parent>cmdbAbstractObject</parent>
+			<properties>
+				<is_link>1</is_link>
+				<category>bizmodel,ipmgmt</category>
+				<abstract>false</abstract>
+				<key_type>autoincrement</key_type>
+				<db_table>lnkipinterfacetoipaddress</db_table>
+				<db_key_field>id</db_key_field>
+				<db_final_class_field/>
+				<naming>
+					<format>%1$s %2$s</format>
+					<attributes>
+						<attribute id="ipinterface_id"/>
+						<attribute id="ipaddress_id"/>
+					</attributes>
+				</naming>
+				<display_template/>
+				<icon/>
+				<reconciliation>
+					<attributes>
+						<attribute id="ipinterface_id"/>
+						<attribute id="ipaddress_id"/>
+					</attributes>
+				</reconciliation>
+			</properties>
+			<fields>
+				<field id="ipinterface_id" xsi:type="AttributeExternalKey">
+					<sql>ipinterface_id</sql>
+					<target_class>IPInterface</target_class>
+					<is_null_allowed>false</is_null_allowed>
+					<on_target_delete>DEL_AUTO</on_target_delete>
+					<jointype/>
+				</field>
+				<field id="ipinterface_name" xsi:type="AttributeExternalField">
+					<extkey_attcode>ipinterface_id</extkey_attcode>
+					<target_attcode>name</target_attcode>
+				</field>
+				<field id="ipaddress_id" xsi:type="AttributeExternalKey">
+					<sql>ipaddress_id</sql>
+					<target_class>IPAddress</target_class>
+					<is_null_allowed>false</is_null_allowed>
+					<on_target_delete>DEL_AUTO</on_target_delete>
+					<jointype/>
+				</field>
+				<field id="usage_id" xsi:type="AttributeExternalField" _delta="define">
+					<extkey_attcode>ipaddress_id</extkey_attcode>
+					<target_attcode>usage_id</target_attcode>
+				</field>
+				<field id="ipaddress_org_name" xsi:type="AttributeExternalField" _delta="define">
+					<extkey_attcode>ipaddress_id</extkey_attcode>
+					<target_attcode>org_name</target_attcode>
+				</field>
+			</fields>
+			<methods>
+				<method id="AfterInsert" _delta="define">
+				<comment/>
+				<static>false</static>
+				<access>public</access>
+				<type>Overload-DBObject</type>
+				<code><![CDATA[	public function AfterInsert()
+	{
+		parent::AfterInsert();
+		
+		$iIpId = $this->Get('ipaddress_id');
+		if ($iIpId != null)
+		{
+			$oIP = MetaModel::GetObject('IPAddress', $iIpId, false /* MustBeFound */);
+			if (!is_null($oIP))
+			{
+				$oIP->Set('status', 'allocated');	
+				$oIP->DBUpdate();
+			}
+		}
+	}]]></code>
+				</method>
+				<method id="AfterDelete" _delta="define">
+					<comment/>
+					<static>false</static>
+					<access>public</access>
+					<type>Overload-DBObject</type>
+					<code><![CDATA[	public function OnDelete()
+	{
+		parent::AfterDelete();
+		
+		$iIpIntId = $this->Get('ipinterface_id');
+		$iIpId = $this->Get('ipaddress_id');
+		if ($iIpId != null)
+		{
+			$oIP = MetaModel::GetObject('IPAddress', $iIpId, false /* MustBeFound */);
+			if ($oIP != null)
+			{
+				if ($oIP->Get('status') == 'allocated')
+				{
+					// Reset status only of IP is not set on another interface
+					$oIPInterfaceToIPAddressSearch = DBObjectSearch::FromOQL("SELECT lnkIPInterfaceToIPAddress AS l WHERE l.ipaddress_id = $iIpId AND l.ipinterface_id != $iIpIntId");
+					$oIPInterfaceToIPAddressSet = new CMDBObjectSet($oIPInterfaceToIPAddressSearch);
+					if (!$oIPInterfaceToIPAddressSet->CountExceeds(0))
+					{
+						$oIP->Set('status', 'unassigned');	
+						$oIP->DBUpdate();
+					}
+				}
+			}
+		}
+	}]]></code>
+				</method>
+			</methods>
+			<presentation>
+				<details>
+					<items>
+						<item id="ipinterface_id">
+							<rank>10</rank>
+						</item>
+						<item id="ipaddress_id">
+							<rank>20</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="ipinterface_id">
+							<rank>10</rank>
+						</item>
+						<item id="ipaddress_id">
+							<rank>20</rank>
+						</item>
+					</items>
+				</search>
+				<list>
+					<items>
+						<item id="ipinterface_id">
+							<rank>10</rank>
+						</item>
+						<item id="ipaddress_id">
+							<rank>20</rank>
+						</item>
+						<item id="usage_id">
+							<rank>30</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
 		<class id="ManagementModule" _delta="must_exist">
 			<presentation>
 				<details>
