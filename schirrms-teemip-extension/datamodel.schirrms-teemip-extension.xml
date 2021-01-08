@@ -152,6 +152,54 @@
 				</list>
 			</presentation>
 		</class>
+		<class id="GenericCommInterface" _delta="must_exist">
+			<field id="ip_list" xsi:type="AttributeLinkedSetIndirect" _delta="define">
+				<linked_class>lnkGenericCommInterfaceToIPAddress</linked_class>
+				<ext_key_to_me>ipinterface_id</ext_key_to_me>
+				<count_min>0</count_min>
+				<count_max>0</count_max>
+				<ext_key_to_remote>ipaddress_id</ext_key_to_remote>
+				<duplicates/>
+			</field>
+			<methods>
+				<method id="GetAttributeParams" _delta="define">
+					<comment>/**&#13;
+					* Provides attributes' parameters &#13;
+					*/</comment>
+					<static>false</static>
+					<access>public</access>
+					<type>Overload-DBObject</type>
+					<code><![CDATA[	public function GetAttributeParams($sAttCode)
+	{
+		if ($sAttCode == 'physicaladdress')
+		{
+			$oObject = null;
+			$sClass = get_class($this);
+			if (MetaModel::IsValidAttCode($sClass, 'connectableci_id'))
+			{
+				$iConnectableCIId = $this->Get('connectableci_id');
+				$oObject = MetaModel::GetObject('ConnectableCI', $iConnectableCIId, false /* MustBeFound */);
+			}
+			else if (MetaModel::IsValidAttCode($sClass, 'virtualmachine_id'))
+			{
+				$iVirtualMachineId = $this->Get('virtualmachine_id');
+				$oObject = MetaModel::GetObject('VirtualMachine', $iVirtualMachineId, false /* MustBeFound */);
+			}
+			if ($oObject != null)
+			{
+				$iOrgId = $oObject->Get('org_id');
+				if ($iOrgId != null)
+				{
+					return(IPConfig::GetFromGlobalIPConfig('mac_address_format', $iOrgId));
+				}
+			}
+			return('colons');
+		}
+		return '';
+	}]]></code>
+				</method>
+			</methods>
+		</class>
 		<class id="GenericCommPhysInterface" _delta="must_exist">
 			<presentation>
 				<details>
