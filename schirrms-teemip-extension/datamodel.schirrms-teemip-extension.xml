@@ -205,9 +205,6 @@
 		<class id="GenericCommPhysInterface" _delta="must_exist">
 			<presentation>
 				<details>
-					<item id="vlans_list" _delta="define">
-						<rank>130</rank>
-					</item>
 					<item id="ip_list" _delta="define">
 						<rank>140</rank>
 					</item>
@@ -217,9 +214,6 @@
 		<class id="GenericCommVirtInterface" _delta="must_exist">
 			<presentation>
 				<details>
-					<item id="vlans_list" _delta="define">
-						<rank>130</rank>
-					</item>
 					<item id="ip_list" _delta="define">
 						<rank>140</rank>
 					</item>
