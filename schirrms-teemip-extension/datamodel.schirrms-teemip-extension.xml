@@ -203,13 +203,13 @@
 		<class id="GenericCommPhysInterface" _delta="must_exist">
 			<presentation>
 				<details>
-					<item id="vlans_list">
+					<item id="vlans_list" _delta="define">
 						<rank>10</rank>
 					</item>
-					<item id="vrfs_list">
+					<item id="vrfs_list" _delta="define">
 						<rank>20</rank>
 					</item>
-					<item id="ip_list">
+					<item id="ip_list" _delta="define">
 						<rank>30</rank>
 					</item>
 				</details>
@@ -218,13 +218,13 @@
 		<class id="GenericCommVirtInterface" _delta="must_exist">
 			<presentation>
 				<details>
-					<item id="vlans_list">
+					<item id="vlans_list" _delta="define">
 						<rank>10</rank>
 					</item>
-					<item id="vrfs_list">
+					<item id="vrfs_list" _delta="define">
 						<rank>20</rank>
 					</item>
-					<item id="ip_list">
+					<item id="ip_list" _delta="define">
 						<rank>30</rank>
 					</item>
 				</details>
