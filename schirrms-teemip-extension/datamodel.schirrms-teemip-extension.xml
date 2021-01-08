@@ -4,14 +4,14 @@
 	</constants>
 	<classes>
 		<!-- technically a clone of lnkIPInterfaceToIPAddress -->
-		<class id="lnkIPInterfaceToIPAddress" _delta="define">
+		<class id="lnkGenericCommInterfaceToIPAddress" _delta="define">
 			<parent>cmdbAbstractObject</parent>
 			<properties>
 				<is_link>1</is_link>
 				<category>bizmodel,ipmgmt</category>
 				<abstract>false</abstract>
 				<key_type>autoincrement</key_type>
-				<db_table>lnkipinterfacetoipaddress</db_table>
+				<db_table>lnkgenericcomminterfacetoipaddress</db_table>
 				<db_key_field>id</db_key_field>
 				<db_final_class_field/>
 				<naming>
@@ -33,7 +33,7 @@
 			<fields>
 				<field id="ipinterface_id" xsi:type="AttributeExternalKey">
 					<sql>ipinterface_id</sql>
-					<target_class>IPInterface</target_class>
+					<target_class>GenericCommInterface</target_class>
 					<is_null_allowed>false</is_null_allowed>
 					<on_target_delete>DEL_AUTO</on_target_delete>
 					<jointype/>
@@ -99,11 +99,15 @@
 				if ($oIP->Get('status') == 'allocated')
 				{
 					// Reset status only of IP is not set on another interface
+					// More complex now... I'll have to change also the method in the
+					// source class
 					$oIPInterfaceToIPAddressSearch = DBObjectSearch::FromOQL("SELECT lnkIPInterfaceToIPAddress AS l WHERE l.ipaddress_id = $iIpId AND l.ipinterface_id != $iIpIntId");
 					$oIPInterfaceToIPAddressSet = new CMDBObjectSet($oIPInterfaceToIPAddressSearch);
-					if (!$oIPInterfaceToIPAddressSet->CountExceeds(0))
+					$oGenericCommInterfaceToIPAddressSearch = DBObjectSearch::FromOQL("SELECT lnkGenericCommInterfaceToIPAddress AS l WHERE l.ipaddress_id = $iIpId AND l.ipinterface_id != $iIpIntId");
+					$oGenericCommInterfaceToIPAddressSet = new CMDBObjectSet($oGenericCommInterfaceToIPAddressSearch);
+					if (!$oIPInterfaceToIPAddressSet->CountExceeds(0) && !$oGenericCommInterfaceToIPAddressSet->CountExceeds(0))
 					{
-						$oIP->Set('status', 'unassigned');	
+						$oIP->Set('status', 'unassigned');
 						$oIP->DBUpdate();
 					}
 				}
