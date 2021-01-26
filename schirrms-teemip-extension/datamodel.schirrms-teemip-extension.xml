@@ -384,7 +384,7 @@
 					<duplicates/>
 				</field>
 				<field id="vlans_list" xsi:type="AttributeLinkedSetIndirect" _delta="define">
-					<linked_class>lnkGzenericCommInterfaceToVLAN</linked_class>
+					<linked_class>lnkGenericCommInterfaceToVLAN</linked_class>
 					<ext_key_to_me>genericcomminterface_id</ext_key_to_me>
 					<count_min>0</count_min>
 					<count_max>0</count_max>
