@@ -25,6 +25,7 @@ Dict::Add('EN US', 'English', 'English', array(
 	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:usage_id+' => '',
 	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:ipaddress_org_name' => 'IP Address organization name',
 	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:ipaddress_org_name+' => '',
-
+	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:ipinterface_id_finalclass_recall' => 'Interface type',
+	'Class:GenericCommInterface/Attribute:ip_list' =>'IP Address', 
 ));
 ?>

@@ -206,6 +206,12 @@
 			<presentation>
 				<details>
 					<items>
+						<item id="vlans_list">
+							<rank>120</rank>
+						</item>
+						<item id="vrfs_list">
+							<rank>130</rank>
+						</item>
 						<item id="ip_list" _delta="define">
 							<rank>140</rank>
 						</item>
@@ -217,6 +223,12 @@
 			<presentation>
 				<details>
 					<items>
+						<item id="vlans_list">
+							<rank>120</rank>
+						</item>
+						<item id="vrfs_list">
+							<rank>130</rank>
+						</item>
 						<item id="ip_list" _delta="define">
 							<rank>140</rank>
 						</item>
@@ -592,7 +604,6 @@ class TeemIpConfigMgmtAdaptor implements iApplicationUIExtension, iApplicationOb
 			</content>
 		</snippet>
 	</snippets>
-
 	<user_rights>
 		<groups>
 		</groups>

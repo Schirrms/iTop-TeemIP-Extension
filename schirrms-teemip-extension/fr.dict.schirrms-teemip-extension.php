@@ -25,6 +25,9 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:usage_id+' => '',
 	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:ipaddress_org_name' => 'Nom de l\'organisation de l\'adresse IP',
 	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:ipaddress_org_name+' => '',
+	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:ipinterface_id_finalclass_recall' => 'Type de l\'interface',
+	'Class:GenericCommInterface/Attribute:ip_list' =>'Adresses IP', 
+
 ));
 
 //
