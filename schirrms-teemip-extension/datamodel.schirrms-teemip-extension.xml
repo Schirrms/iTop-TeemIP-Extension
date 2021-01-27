@@ -331,6 +331,7 @@
 				</list>
 			</presentation>
 		</class>
+		<!-- Some deactivation for now
 		<class id="VLAN" _delta="must_exist">
 			<fields>
 				<field id="genericcomminterfaces_list" xsi:type="AttributeLinkedSetIndirect" _delta="define">
@@ -373,6 +374,7 @@
 				</details>
 			</presentation>
 		</class>
+		-->
 		<class id="GenericCommInterface" _delta="must_exist">
 			<fields>
 				<field id="ip_list" xsi:type="AttributeLinkedSetIndirect" _delta="define">
