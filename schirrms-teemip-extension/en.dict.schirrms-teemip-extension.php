@@ -49,6 +49,14 @@ Dict::Add('EN US', 'English', 'English', array(
 ));
 
 //
+// Class : GenericCommDevice
+//
+
+Dict::Add('FR FR', 'French', 'Français', array(
+	'Class:GenericCommDevice/Tab:ipddresses_list' => 'IP Addresses',
+));
+
+//
 // Class : GenericCommInterface
 //
 
