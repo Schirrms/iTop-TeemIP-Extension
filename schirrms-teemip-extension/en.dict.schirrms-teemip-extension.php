@@ -2,7 +2,7 @@
 /**
  * Localized data
  *
- * @copyright   Copyright (C) 2011 Schirrms
+ * @copyright   Copyright (C) 2021 Schirrms
  * @license     http://opensource.org/licenses/AGPL-3.0
  */
 
@@ -26,6 +26,38 @@ Dict::Add('EN US', 'English', 'English', array(
 	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:ipaddress_org_name' => 'IP Address organization name',
 	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:ipaddress_org_name+' => '',
 	'Class:lnkGenericCommInterfaceToIPAddress/Attribute:ipinterface_id_finalclass_recall' => 'Interface type',
-	'Class:GenericCommInterface/Attribute:ip_list' =>'IP Address', 
 ));
+
+
+//
+// Class: lnkGenericCommInterfaceToVLAN
+//
+
+Dict::Add('EN US', 'English', 'English', array(
+	'Class:lnkGenericCommInterfaceToVLAN' => 'Communication Interfaces / VLAN Link',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_id' => 'Interface',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_name' => 'Interface name',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_device_id' => 'Device owning this interface',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_device_name' => 'Name of the device owning this interface',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_friendly_name' => 'Interface friendly name',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_id_final_class' => 'Interface type',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_device_id_final_class' => 'Device Type',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:vlan_id' => 'VLAN',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:vlan_id+' => '',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:vlan_tag' => 'VLAN Tag',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:vlan_tag+' => '',
+));
+
+//
+// Class : GenericCommInterface
+//
+
+Dict::Add('EN US', 'English', 'English', array(
+	'Class:GenericCommInterface/Attribute:ip_list' =>'IP address', 
+	'Class:GenericCommVirtInterface/Attribute:vlans_list' => 'VLANs',
+	'Class:GenericCommVirtInterface/Attribute:vlans_list+' => '',
+	'Class:GenericCommVirtInterface/Attribute:vrfs_list' => 'VRFs',
+	'Class:GenericCommVirtInterface/Attribute:vrfs_list+' => '',
+));
+
 ?>
