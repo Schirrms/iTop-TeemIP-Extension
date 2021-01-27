@@ -63,10 +63,10 @@ Dict::Add('EN US', 'English', 'English', array(
 
 Dict::Add('EN US', 'English', 'English', array(
 	'Class:GenericCommInterface/Attribute:ip_list' =>'IP address', 
-	'Class:GenericCommVirtInterface/Attribute:vlans_list' => 'VLANs',
-	'Class:GenericCommVirtInterface/Attribute:vlans_list+' => '',
-	'Class:GenericCommVirtInterface/Attribute:vrfs_list' => 'VRFs',
-	'Class:GenericCommVirtInterface/Attribute:vrfs_list+' => '',
+	'Class:GenericCommInterface/Attribute:vlans_list' => 'VLANs',
+	'Class:GenericCommInterface/Attribute:vlans_list+' => '',
+	'Class:GenericCommInterface/Attribute:vrfs_list' => 'VRFs',
+	'Class:GenericCommInterface/Attribute:vrfs_list+' => '',
 ));
 
 //
