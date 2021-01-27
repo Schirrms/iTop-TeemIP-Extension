@@ -52,8 +52,9 @@ Dict::Add('EN US', 'English', 'English', array(
 // Class : GenericCommDevice
 //
 
-Dict::Add('FR FR', 'French', 'Français', array(
-	'Class:GenericCommDevice/Tab:ipddresses_list' => 'IP Addresses',
+Dict::Add('EN US', 'English', 'English', array(
+	'Class:GenericCommDevice/Tab:ipaddresses_list' => 'Interfaces\' IPs',
+	'Class:GenericCommDevice/Tab:ipaddresses_list+' => 'List of all IP addresses hosted by all IP interfaces attached to the CI',
 ));
 
 //

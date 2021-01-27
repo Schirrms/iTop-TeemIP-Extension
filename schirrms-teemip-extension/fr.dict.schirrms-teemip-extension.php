@@ -52,7 +52,8 @@ Dict::Add('FR FR', 'French', 'Français', array(
 //
 
 Dict::Add('FR FR', 'French', 'Français', array(
-	'Class:GenericCommDevice/Tab:ipddresses_list' => 'Adresses IP',
+	'Class:GenericCommDevice/Tab:ipaddresses_list' => 'IPs des Interfaces',
+	'Class:GenericCommDevice/Tab:ipaddresses_list+' => 'Liste de toutes les adresses IP de toutes les interfaces attachées au CI',
 ));
 
 //
