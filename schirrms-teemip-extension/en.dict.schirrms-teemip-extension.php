@@ -60,4 +60,12 @@ Dict::Add('EN US', 'English', 'English', array(
 	'Class:GenericCommVirtInterface/Attribute:vrfs_list+' => '',
 ));
 
+//
+// Class : VLAN
+//
+
+Dict::Add('EN US', 'English', 'English', array(
+	'Class:VLAN/Attribute:genericcomminterfaces_list' =>'Communication interfaces', 
+));
+
 ?>

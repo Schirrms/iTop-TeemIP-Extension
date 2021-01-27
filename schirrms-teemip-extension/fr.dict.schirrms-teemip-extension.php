@@ -35,18 +35,17 @@ Dict::Add('FR FR', 'French', 'Français', array(
 Dict::Add('FR FR', 'French', 'Français', array(
 	'Class:lnkGenericCommInterfaceToVLAN' => 'Lien Interface de Communication / VLAN',
 	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_id' => 'Interface',
-	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_name' => 'Nom de l\interface',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_name' => 'Nom de l\'interface',
 	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_device_id' => 'Equipement contenant l\'interface',
 	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_device_name' => 'Nom de l\'équipement contenant l\'interface',
 	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_friendly_name' => 'Nom générique de l\'interface',
-	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_id_final_class' => 'Type d\'interface',
+	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_id_finalclass_recall' => 'Type d\'interface',
 	'Class:lnkGenericCommInterfaceToVLAN/Attribute:genericcomminterface_device_id_final_class' => 'Type de l\'équipement contenant l\'interface',
 	'Class:lnkGenericCommInterfaceToVLAN/Attribute:vlan_id' => 'VLAN',
 	'Class:lnkGenericCommInterfaceToVLAN/Attribute:vlan_id+' => '',
 	'Class:lnkGenericCommInterfaceToVLAN/Attribute:vlan_tag' => 'VLAN Tag',
 	'Class:lnkGenericCommInterfaceToVLAN/Attribute:vlan_tag+' => '',
 ));
-
 
 //
 // Class : GenericCommInterface
@@ -60,4 +59,11 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Class:GenericCommVirtInterface/Attribute:vrfs_list+' => '',
 ));
 
+//
+// Class : VLAN
+//
+
+Dict::Add('FR FR', 'French', 'Français', array(
+	'Class:VLAN/Attribute:genericcomminterfaces_list' =>'Interfaces de communication', 
+));
 ?>
