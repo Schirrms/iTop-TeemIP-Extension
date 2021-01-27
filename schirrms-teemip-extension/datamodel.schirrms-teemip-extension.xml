@@ -606,7 +606,7 @@ class TeemIpConfigMgmtAdaptor implements iApplicationUIExtension, iApplicationOb
                 }
                 if($oObject->Get('finalclass') == 'GenericCommDevice')
                 {
-                    $sOQLG .= " UNION SELECT lnkGenericCommInterfaceToIPAddress AS l8 JOIN GenericCommInterface AS int ON l8.ipinterface_id = int.id JOIN GenericCommDevice AS n ON int.connectable_id = n.id WHERE n.id = :ci_id";
+                    $sOQLG .= " UNION SELECT lnkGenericCommInterfaceToIPAddress AS l8 JOIN GenericCommInterface AS int ON l8.ipinterface_id = int.id JOIN GenericCommDevice AS n ON int.connectableci_id = n.id WHERE n.id = :ci_id";
                     $sDisplayClass = 'GenericCommDevice';
                 }
                 $oLnkSet  =  new CMDBObjectSet(DBObjectSearch::FromOQL($sOQL),  array(), array('ci_id' => $oObject->GetKey()));
